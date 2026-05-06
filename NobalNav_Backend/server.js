@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import appointmentRoutes from './routes/appointments.js';
 import { MongoClient, ServerApiVersion } from 'mongodb';
-const uri = "mongodb+srv://nobalnav_admin:Admin1234@cluster0.ossvluy.mongodb.net/?appName=Cluster0";
+const uri = process.env.MONGO_URI;
 dotenv.config();
 
 const app = express();
