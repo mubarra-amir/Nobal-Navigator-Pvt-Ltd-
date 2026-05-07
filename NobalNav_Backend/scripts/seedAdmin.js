@@ -8,8 +8,8 @@ dotenv.config();
 
 const ADMIN_CREDENTIALS = {
   fullName: 'NobalNav Admin',
-  email:    'mubarrahaamir48@gmail.com',      
-  password: 'NobalNav@Admin1',    
+  email:    'adminnobalnav@gmail.com',      
+  password: 'nobalnav_admin',    
 };
 
 async function seed() {

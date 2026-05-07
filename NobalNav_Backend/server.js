@@ -9,7 +9,7 @@ import authRoutes from './routes/auth.js';
 import appointmentRoutes from './routes/appointments.js';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
-const MONGO_URI = process.env.MONGODB_URI; // ✅ from .env
+const MONGO_URI = process.env.MONGODB_URI; 
 
 const app = express();
 
@@ -30,17 +30,17 @@ async function run() {
   try {
     await client.connect();
     await client.db("nobalnav_database").command({ ping: 1 });
-    console.log("✅ MongoClient connected to nobalnav_database");
+    console.log("MongoClient connected to nobalnav_database");
   } catch (err) {
-    console.error("❌ MongoClient connection failed:", err.message);
+    console.error(" MongoClient connection failed:", err.message);
   }
 }
 
 run();
 
 mongoose.connect(MONGO_URI)
-  .then(() => console.log("✅ Mongoose connected to nobalnav_database"))
-  .catch(err => console.error("❌ Mongoose connection failed:", err.message));
+  .then(() => console.log("Mongoose connected to nobalnav_database"))
+  .catch(err => console.error("Mongoose connection failed:", err.message));
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -67,4 +67,4 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(` Server running on port ${PORT}`));
